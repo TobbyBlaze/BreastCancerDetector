@@ -16,12 +16,13 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="style.css">
+
   <style>
     @import "compass/css3";
  body {
 	 font-size: 62.5%;
 	 width: 100%;
-	 /* height: 100%; */
+	 height: 100%;
 	 position: absolute;
    font-family: Raleway;
    background: url(https://cancerfax.com/wp-content/uploads/2020/07/Breast-cancer-treatment-in-India-guidelines-768x415.jpg) no-repeat fixed;
@@ -42,7 +43,7 @@
 	 width: 10%;
 	 background: white;
 	 color: rgba(0, 0, 0, 0.7);
-	 /* position: fixed; */
+	 position: fixed;
 	 background: rgba(255, 255, 255, 0.5);
 	 border: none;
 	 font-size: 1.2rem;
@@ -62,14 +63,14 @@ body #findpa {
   cursor: pointer;
 }
 body #findpas {
-  top: 15%;
-  left: 15%;
+  top: 10%;
+  left: 20%;
   padding: 10px 20px;
-  width: 70%;
+  width: auto;
   background: white;
-  color: rgba(255, 255, 255, 1.0);
+  color: rgba(255, 255, 255, 0.9);
   position: fixed;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
@@ -79,29 +80,29 @@ body #findpas {
 }
  .form {
 	 margin: 0 auto;
-	 position: relative;
-	 top: 30%;
-   /* left: 20%; */
-   width: 70%;
+	 position: fixed;
+	 top: 20%;
+   left: 20%;
+   width: 60%;
 	 /* width: 350px; */
 	 padding: 10px;
 	 overflow: hidden;
-	 background-color: rgba(0, 0, 0, 0.4);
-	 border: 1px solid rgba(255, 255, 255, 0.4);
-	 /* background: inherit; */
+	 background-color: rgba(0, 0, 0, 1);
+	 border: 1px solid rgba(255, 255, 255, 0.5);
+	 background: inherit;
 }
  .form .forceColor {
 	 width: 100%;
-	 /* height: 100%; */
+	 height: 100%;
 	 position: absolute;
 	 left: 0;
-	 /* top: 0; */
+	 top: 0;
 	 background-color: rgba(0, 0, 0, 0.7);
 }
  .form:before {
 	 content: "";
 	 width: 110%;
-	 /* height: 110%; */
+	 height: 110%;
 	 position: absolute;
 	 background: inherit;
 	 left: -5%;
@@ -135,11 +136,11 @@ body #findpas {
 	 font-size: 1rem;
 	 background: transparent;
 	 border-top: 1px solid rgba(255, 255, 255, 0.4);
-	 border-left: 1px solid rgba(255, 255, 255, 1.0);
-	 border-bottom: 1px solid rgba(255, 255, 255, 1.0);
-	 border-right: 1px solid rgba(255, 255, 255, 1.0);
+	 border-left: 1px solid rgba(255, 255, 255, 0.4);
+	 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	 border-right: 1px solid rgba(255, 255, 255, 0.4);
 	 margin-bottom: 20px;
-	 color: rgba(255, 255, 255, 0.5);
+	 color: rgba(255, 255, 255, 0.6);
 	 padding: 5px 20px;
 }
  .form .topbar .input::-webkit-input-placeholder {
@@ -222,6 +223,10 @@ body #findpas {
 	 color: white;
 }
       
+body {
+	margin: 0;
+	padding: 0;
+}
 .main {
 	max-height: 200px;;
 	background-color: #292c2f;
@@ -371,7 +376,6 @@ footer{
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
-
 .oh{
 		color:  #ffffff;
 		font: normal 36px 'Cookie', cursive;
@@ -408,7 +412,6 @@ footer{
 		font-size: auto;
 	}
 }
-	
 
  
   </style>
@@ -417,10 +420,9 @@ footer{
 
 </head>
 
-	<body>
-		
-		
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="{{ url_for('home') }}"><h1 class="oh">Ohe<span class="ma">maa</span></h1></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
@@ -433,98 +435,164 @@ footer{
 		  </div>
 		</div>
 	  </nav>
-	  <div class="container-fluid">
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+<div class="container-fluid">
+  <div class="jumbotron">
+	  <h3>Ways to prevent Breast Cancer</h3>
+	  <p>
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse1" aria-expanded="false" aria-controls="multiCollapse1">Limit alcohol</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse1">
+				<div class="card card-body">
+                    <h6>
+                        The more alcohol you drink, the greater your risk of developing breast cancer. The general recommendation — based on research on the effect of alcohol on breast cancer risk — is to limit yourself to less than one drink a day, as even small amounts increase risk.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse2" aria-expanded="false" aria-controls="multiCollapse2">Don't smoke. </button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse2">
+				<div class="card card-body">
+                    <h6>
+					Evidence suggests a link between smoking and breast cancer risk, particularly in premenopausal women.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse3" aria-expanded="false" aria-controls="multiCollapse3">Control your weight. </button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse3">
+				<div class="card card-body">
+                    <h6>
+                        Being overweight or obese increases the risk of breast cancer. This is especially true if obesity occurs later in life, particularly after menopause.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse4" aria-expanded="false" aria-controls="multiCollapse4">Be physically active. </button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse4">
+				<div class="card card-body">
+                    <h6>
+					Physical activity can help you maintain a healthy weight, which helps prevent breast cancer. Most healthy adults should aim for at least 150 minutes a week of moderate aerobic activity or 75 minutes of vigorous aerobic activity weekly, plus strength training at least twice a week.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse5" aria-expanded="false" aria-controls="multiCollapse5">Breast-feed. </button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse5">
+				<div class="card card-body">
+                    <h6>
+					Breast-feeding might play a role in breast cancer prevention. The longer you breast-feed, the greater the protective effect.
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse6" aria-expanded="false" aria-controls="multiCollapse6">Limit dose and duration of hormone therapy. </button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse6">
+				<div class="card card-body">
+                    <h6>
+                        Combination hormone therapy for more than three to five years increases the risk of breast cancer. If you're taking hormone therapy for menopausal symptoms, ask your doctor about other options. You might be able to manage your symptoms with nonhormonal therapies and medications. If you decide that the benefits of short-term hormone therapy outweigh the risks, use the lowest dose that works for you and continue to have your doctor monitor the length of time you're taking hormones.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse7" aria-expanded="false" aria-controls="multiCollapse7">Avoid exposure to radiation and environmental pollution. </button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse7">
+				<div class="card card-body">
+                    <h6>
+					 Medical-imaging methods, such as computerized tomography, use high doses of radiation. While more studies are needed, some research suggests a link between breast cancer and cumulative exposure to radiation over your lifetime. Reduce your exposure by having such tests only when absolutely necessary.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
 	
-	<!-- <button id="findpass">Breast Cancer Detector</button> -->
-	<span id="findpas"><h3>{{ prediction_text }}</h3></span>
-	<form action="{{ url_for('predict')}}"method="POST">
-	<div class="form">
-		<div class="forceColor"></div>
-		<div class="topbar">
-		
-			<div class="spanColor"></div>
-			<input type="text" name="Age" class="input" placeholder="Age" required="required" />
-			<input type="text" name="BMI" class="input" placeholder="BMI" required="required" />
-			<input type="text" name="Glucose" class="input" placeholder="Glucose" required="required" />
-			<input type="text" name="Insulin" class="input" placeholder="Insulin" required="required" />
-			<input type="text" name="HOMA" class="input" placeholder="HOMA" required="required" />
-			<input type="text" name="Leptin" class="input" placeholder="Leptin" required="required" />
-			<input type="text" name="Adiponectin" class="input" placeholder="Adiponectin" required="required" />
-			<input type="text" name="Resistin" class="input" placeholder="Resistin" required="required" />
-			<input type="text" name="MCP.1" class="input" placeholder="MCP.1" required="required" />
-		</div>
-		<button class="submit" id="submit" type="submit">Predict cancer</button>
-	</div>
-	</form>
+		<hr />
+	  </p>
+
+  </div>
+
+ </div>
 </div>
-	
-		<footer class="footer-distributed">
-		
-			<div class="footer-left">
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-				<h3>Ohe<span>maa</span></h3>
+<footer class="footer-distributed">
+ 
+		<div class="footer-left">
+ 
+		<h3>Ohe<span>maa</span></h3>
 
-
-				<p class="footer-company-name">Breast Cancer Detector &copy; 2020</p>
-				<br />
+ 
+		<p class="footer-company-name">Breast Cancer Detector &copy; 2020</p>
+		<br />
 				<img class="img-fluid rounded-circle" src="{{ url_for('static', filename='images/1.jpg') }}" alt="Breast Cancer Detector" width="80" height="80">
 				<img class="img-fluid rounded-circle" src="{{ url_for('static', filename='images/2.jpg') }}" alt="Breast Cancer Detector" width="80" height="80">
 				<img class="img-fluid rounded-circle" src="{{ url_for('static', filename='images/3.jpg') }}" alt="Breast Cancer Detector" width="80" height="80">
-			</div>
-
-			<div class="footer-center">
-
-				<div>
-				<i class="fa fa-map-marker"></i>
-				<p><span>IoT Lab University of Capecoast</span> CapeCoast, Ghana</p>
-				</div>
-
-				<div>
-				<i class="fa fa-phone"></i>
-				<p>+233 551099536</p>
-				</div>
-
-				<div>
-				<i class="fa fa-envelope"></i>
-				<p><a href="mailto:support@company.com">contact@Breast Cancer Detectorgroup.com</a></p>
-				</div>
-
-			</div>
-
-			<div class="footer-right">
-
-				<p class="footer-company-about">
-				<span>About Us</span>
-				We are a team of UCC undergraduates, who see the need and benefit of machine learning in relation to prediction and are trying to use its advantage to make breast cancer prediction easier.
-				</p>
-
-
-				<div class="footer-icons">
-
-				<a href="facebook.com"><i class="fa fa-facebook"></i></a>
-				<a href="twitter.com"><i class="fa fa-twitter"></i></a>
-				<a href="linkedin.com"><i class="fa fa-linkedin"></i></a>
-				<a href="github.com"><i class="fa fa-github"></i></a>
-
-				</div>
-
-			</div>
-
+		</div>
+ 
+		<div class="footer-center">
+ 
+		<div>
+		<i class="fa fa-map-marker"></i>
+		<p><span>IoT Lab University of Capecoast</span> CapeCoast, Ghana</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-phone"></i>
+		<p>+233 551099536</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-envelope"></i>
+		<p><a href="mailto:support@company.com">contact@Breast Cancer Detectorgroup.com</a></p>
+		</div>
+ 
+		</div>
+ 
+		<div class="footer-right">
+ 
+		<p class="footer-company-about">
+		<span>About Us</span>
+	We are a team of UCC undergraduates, who see the need and benefit of machine learning in relation to prediction and are trying to use its advantage to make breast cancer prediction easier.
+		</p>
+ 
+		<div class="footer-icons">
+ 
+		<a href="facebook.com"><i class="fa fa-facebook"></i></a>
+		<a href="twitter.com"><i class="fa fa-twitter"></i></a>
+		<a href="linkedin.com"><i class="fa fa-linkedin"></i></a>
+		<a href="github.com"><i class="fa fa-github"></i></a>
+ 
+		</div>
+ 
+		</div>
+ 
 		</footer>
-	
-	<!-- JS, Popper.js, and jQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-	</body>
-
+</body>
 </html>

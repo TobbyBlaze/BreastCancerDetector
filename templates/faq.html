@@ -1,333 +1,814 @@
+<!-- This is GUI for Breast Cancer Detection Application Using Machine Learning Classifer -->
+
 <!DOCTYPE html>
-<html lang="en"><!-- Basic -->
+<html >
 <head>
+    
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="footer, address, phone, icons" />
+	
+  <meta charset="UTF-8">
+  <title>Breast Cancer Detector</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
+
+  <style>
+    @import "compass/css3";
+ body {
+	 font-size: 62.5%;
+	 width: 100%;
+	 height: 100%;
+	 position: absolute;
+   font-family: Raleway;
+   background: url(https://cancerfax.com/wp-content/uploads/2020/07/Breast-cancer-treatment-in-India-guidelines-768x415.jpg) no-repeat fixed;
+   /* background: url(http://almurshidimed.com/wp-content/uploads/2020/04/breast-cancer-screening-early-detection.jpg) no-repeat fixed; */
+   /* background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg) no-repeat fixed; */
+   /* background-image: url("obc1.jpg"); */
+   /* background-repeat: no-repeat; */
+   /* background-attachment: fixed; */
+	 background-size: cover;
+	 background-position: 50%;
+	 -webkit-font-smoothing: antialiased;
+	 /* font-smoothing: antialiased; */
+}
+ body #findpass {
+	 top: 10%;
+	 left: 1%;
+	 padding: 10px 20px;
+	 width: 10%;
+	 background: white;
+	 color: rgba(0, 0, 0, 0.7);
+	 position: fixed;
+	 background: rgba(255, 255, 255, 0.5);
+	 border: none;
+	 font-size: 1.2rem;
+	 cursor: pointer;
+}
+body #findpa {
+  top: 40%;
+  left: 5%;
+  padding: 10px 20px;
+  width: 10px;
+  background: white;
+  color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+body #findpas {
+  top: 10%;
+  left: 20%;
+  padding: 10px 20px;
+  width: auto;
+  background: white;
+  color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+ body #findpass:focus {
+	 outline: none;
+}
+ .form {
+	 margin: 0 auto;
+	 position: fixed;
+	 top: 20%;
+   left: 20%;
+   width: 60%;
+	 /* width: 350px; */
+	 padding: 10px;
+	 overflow: hidden;
+	 background-color: rgba(0, 0, 0, 1);
+	 border: 1px solid rgba(255, 255, 255, 0.5);
+	 background: inherit;
+}
+ .form .forceColor {
+	 width: 100%;
+	 height: 100%;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 background-color: rgba(0, 0, 0, 0.7);
+}
+ .form:before {
+	 content: "";
+	 width: 110%;
+	 height: 110%;
+	 position: absolute;
+	 background: inherit;
+	 left: -5%;
+	 right: 0;
+	 bottom: 0;
+	 top: -5%;
+}
+ .form.goAway {
+	 opacity: 0;
+}
+ .form .topbar .spanColor {
+	 position: absolute;
+	 width: 0px;
+	 right: 20px;
+	 height: 43px;
+	 opacity: 0.2;
+	 background-color: white;
+	 border-top-left-radius: 0px;
+	 border-bottom-left-radius: 0px;
+	 border-top-right-radius: 6px;
+	 border-bottom-right-radius: 6px;
+}
+ .form .topbar .input {
+	 display: block;
+	 width: 100%;
+	 position: relative;
+	 border-top-left-radius: 6px;
+	 border-bottom-left-radius: 6px;
+	 border-top-right-radius: 6px;
+	 border-bottom-right-radius: 6px;
+	 font-size: 1rem;
+	 background: transparent;
+	 border-top: 1px solid rgba(255, 255, 255, 0.4);
+	 border-left: 1px solid rgba(255, 255, 255, 0.4);
+	 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	 border-right: 1px solid rgba(255, 255, 255, 0.4);
+	 margin-bottom: 20px;
+	 color: rgba(255, 255, 255, 0.6);
+	 padding: 5px 20px;
+}
+ .form .topbar .input::-webkit-input-placeholder {
+	 color: white;
+	 font-size: 1.2rem;
+	 font-family: Raleway;
+	 line-height: 1.3rem;
+	 font-weight: 200;
+}
+ .form .topbar .input:focus {
+	 outline: none;
+	 color: white;
+	 border: 1px solid white;
+}
+ .form .topbar .input.disabled:hover {
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+}
+ .form .topbar .input:hover {
+	 border: 1px solid white;
+}
+ .form .submit {
+	 padding: 10px 20px;
+	 width: 100%;
+	 font-size: 1.2rem;
+	 font-family: Raleway;
+	 font-weight: 200;
+	 display: block;
+	 color: black;
+	 position: relative;
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+	 background: rgba(255, 255, 255, 0.5);
+	 cursor: pointer;
+}
+ .form .submit:focus {
+	 outline: none;
+}
+ .form .submit:hover {
+	 color: black;
+	 border: 1px solid white;
+}
+ .form .submit.recover {
+	 background: #ff2b4b;
+	 color: black !important;
+	 border: 1px solid white !important;
+	 transition: all 400ms linear;
+}
+ .topbar.error .spanColor {
+	 width: calc(100% - 39px);
+	 border-top-left-radius: 6px;
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+	 border-bottom-left-radius: 6px;
+	 background-color: #ff2b4b;
+}
+ .topbar.error + .submit {
+	 color: black;
+}
+ .topbar.error .input {
+	 color: rgba(255, 255, 255, 0.4);
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+}
+ .topbar.error .input::-webkit-input-placeholder {
+	 color: white;
+}
+ .topbar.success .spanColor {
+	 width: calc(100% - 39px);
+	 border-top-left-radius: 6px;
+	 border: 1px solid #26c97d;
+	 border-bottom-left-radius: 6px;
+	 background-color: #26c97d;
+}
+ .topbar.success + .submit {
+	 color: black;
+	 border: 1px solid white;
+}
+ .topbar.success .input {
+	 color: white;
+	 border: 1px solid #26c97d;
+}
+ .topbar.success .input::-webkit-input-placeholder {
+	 color: white;
+}
+      
+body {
+	margin: 0;
+	padding: 0;
+}
+.main {
+	max-height: 200px;;
+	background-color: #292c2f;
+	color: white;
+	font-size: 38pt;
+	text-align: center;
+	line-height: 550px;
+}
+footer{
+	position: relative;
+	top: 0;;
+}
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 80px;
+    	position: relative;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #FF69B4;
+}
+
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+.oh{
+		color:  #ffffff;
+		font: normal 36px 'Cookie', cursive;
+
+	}
+.ma{
+	color:  #FF69B4;
+	font: normal 36px 'Cookie', cursive;
+
+}
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.main {
+		line-height: normal;
+		font-size: auto;
+	}
+}
+
  
-     <!-- Site Metas -->
-    <title>Breast Cancer Detector</title>  
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  </style>
 
-     <!-- Site Icons -->
-	<!-- {{ url_for('static', filename='css/main.css') }} -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.1.png') }}" type="Breast Cancer Detector.jpeg">
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icon.1.png') }}">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <!-- Pogo Slider CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/pogo-slider.min.css') }}">
-	<!-- Site CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
-
+  <!-- <link rel="stylesheet" href="can.css" type="text/css" /> -->
 
 </head>
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-	<div class="main-top">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-				</div>
-				<div class="col-lg-6">
-					<div class="wel-nots">
-                        <h2><p>Welcome to Breast Cancer Detector!</p></h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End top bar -->
-	
-	<!-- Start header -->
-	<header class="top-header">
-		<nav class="navbar header-nav navbar-expand-lg">
-            <div class="container">
-				<a class="navbar-brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="image"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
-                    <ul class="navbar-nav">
-                        <li><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
-						<li><a class="nav-link active" href="{{ url_for('status') }}">Status</a></li>
-                        <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-	</header>
-	<!-- End header -->
-	
-	<!-- Start Banner -->
-	<div class="ulockd-home-slider">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="pogoSlider" id="js-main-slider">
-					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-01.jpg);">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-                                <h1><b>Welcome to Breast Cancer Detector</b></h1>
-                                <h2><p>Early detection of breast cancer can save your life </p></h2>
-							</div>
-						</div>
-					</div>
-					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-02.jpg);">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>Let Breast Cancer Detector help you predict your risk of getting breast 
-                                cancer</h1>
-                                <h2><p>Breast Cancer Detector is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
-							</div>
-						</div>
-					</div>
-                    
-                    <div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-03.jpg);">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>The most convinient way to predict breast cancer<h1>
-                                    <h2><p>Breast Cancer Detector is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
-                                    </div>
-                                
-                        </div>
-					   </div>
-                    <div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-04.jpg);">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>Reliable,Fast and Comfortable to use</h1>
-								<h2><p>Breast Cancer Detector is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
-							</div>
-						</div>
-					</div>
-                    
-                    
-                    
-					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-05.jpg);">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>Talk with our professionals </h1>
-								<h2><p>seek help from  experienced doctors and live a healthy life </p></h2>
-							</div>
-						</div>
-						
-					</div>
-                            <div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-06.jpg);">
-						<div class="lbox-caption pogoSlider-slide-element">
-							<div class="lbox-details">
-								<h1>Early detection can save your life</h1>
-								<h2><p>seek help from  experienced doctors and live a healthy life </p></h2>
-							</div>
-						</div>
-						
-					</div>
-				</div><!-- .pogoSlider -->
-			</div>
-		</div>
-	</div>
-	<!-- End Banner -->
-	<!-- Start About us -->
-	<div id="about" class="about-box">
-		<div class="about-a1">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="title-box">
-							<h2>About Us</h2>
-							</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div class="row align-items-center about-main-info">
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<h2> Welcome to Breast Cancer Detector </h2>
-								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum, suscipit sit amet auctor quis, vehicula ut leo. Maecenas felis nulla, tincidunt ac blandit a, consectetur quis elit. Nulla ut magna eu purus cursus sagittis. Praesent fermentum tincidunt varius. Proin sit amet tempus magna. Fusce pellentesque vulputate urna. </p>
-								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum, suscipit sit amet auctor quis, vehicula ut leo. Maecenas felis nulla, tincidunt ac blandit a, consectetur quis elit. Nulla ut magna eu purus cursus sagittis. Praesent fermentum tincidunt varius. Proin sit amet tempus magna. Fusce pellentesque vulputate urna. </p>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="about-m">
-									<ul id="banner">
-										<li>
-											<img src="{{ url_for('static', filename='images/about-img-01.jpg') }}" alt="">
-										</li>
-										<li>
-											<img src="{{ url_for('static', filename='images/about-img-02.jp') }}g" alt="">
-										</li>
-										<li>
-											<img src="{{ url_for('static', filename='images/about-img-03.jpg') }}" alt="">
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End About us -->
-	
-                  
-	
-<!-- Start Team -->
-	<div id="team" class="team-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="title-box">
-						<h2>Our Doctors</h2>
-						<p> </p>
-					</div>
-				</div>
-			</div>
-			
-			<ul id="banner">
-				<li>
-					<img src="{{ url_for('static', filename='images/about-img-01.jpg') }}" alt="">
-				</li>
-				<li>
-					<img src="{{ url_for('static', filename='images/about-img-02.jp') }}g" alt="">
-				</li>
-				<li>
-					<img src="{{ url_for('static', filename='images/about-img-03.jpg') }}" alt="">
-				</li>
-			</ul>
-	</div>
-	
-	<!-- End Team -->
+<body>
 
 	
-	<!-- Start Contact -->
-	<div id="contact" class="contact-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="title-box">
-						<h2>Contact us</h2>
-						</div>
-				</div>
-			</div>
-			<div class="row">
-				
-				<div class="col-lg-12 col-xs-12">
-				  <div class="contact-block">
-					<form id="contactForm">
-					  <div class="row">
-						
-						
-					
-					  </div>            
-					</form>
-				  </div>
-				</div>
-				
-				
-				<div class="col-lg-12 col-xs-12">
-					<div class="left-contact">
-						<div class="media cont-line">
-							<div class="media-left icon-b">
-								<i class="fa fa-location-arrow" aria-hidden="true"></i>
-							</div>
-							<div class="media-body dit-right">
-								<h4>Address</h4>
-								<p>Fleming 196 Woodside Circle Mobile, FL 36602</p>
-							</div>
-						</div>
-						<div class="media cont-line">
-							<div class="media-left icon-b">
-								<i class="fa fa-envelope" aria-hidden="true"></i>
-							</div>
-							<div class="media-body dit-right">
-								<h4>Email</h4>
-								<a href="#">Breast Cancer Detector@gmail.com</a><br>
-								<a href="#">Breast Cancer Detector@yahoo.com</a>
-							</div>
-						</div>
-						<div class="media cont-line">
-							<div class="media-left icon-b">
-								<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-							</div>
-							<div class="media-body dit-right">
-								<h4>Phone Number</h4>
-								<a href="#">12345 67890</a><br>
-								<a href="#">12345 67890</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				
-			</div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="{{ url_for('home') }}"><h1 class="oh">Ohe<span class="ma">maa</span></h1></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		  <div class="navbar-nav">
+			<a class="nav-item nav-link active" href="{{ url_for('home') }}"><h5>HOME</h5> <span class="sr-only">(current)</span></a>
+			<a class="nav-item nav-link" href="{{ url_for('prevention') }}"><h5>PREVENTION</h5></a>
+			<a class="nav-item nav-link" href="{{ url_for('faq') }}"><h5>FAQ</h5></a>
+		  </div>
 		</div>
-	</div>
-	<!-- End Contact -->
-	
-	<!-- Start Subscribe -->
-	<div class="subscribe-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="subscribe-inner text-center clearfix">
-						<h2>Subscribe</h2>
-						<p>You can subscribe to our newsletter and recieve new updates on breast cancer.</p>
-						<form action="#" method="post">
-							<div class="form-group">
-								<input class="form-control-1" id="email-1" name="email" placeholder="Email Address" required="" type="text">
-							</div>
-							<div class="form-group">
-								<button type="submit" class="new-btn-d br-2">
-									Subscribe
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Subscribe -->
-	
-	<!-- Start Footer -->
-	<footer class="footer-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Breast Cancer Detector</a></p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End Footer -->
-	
-	<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+	  </nav>
+ <div class="container-fluid">
+  <div class="jumbotron">
+	  <h3>Frequently asked questions</h3>
+	  <p>
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse1" aria-expanded="false" aria-controls="multiCollapse1">Is it true that one in eight women will get breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse1">
+				<div class="card card-body">
+                    <h6>
+					Not exactly. The one-in-eight statistic doesn't accurately reflect the average woman's breast cancer risk. Age is the most important risk factor for breast cancer. That means the older a woman is, the greater her risk of developing the disease. Statistics from the U.S. National Cancer Institute show that a woman's chance of being diagnosed with breast cancer by age is:
 
-	<!-- ALL JS FILES -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.pogo-slider.min.js"></script> 
-	<script src="js/slider-index.js"></script>
-	<script src="js/smoothscroll.js"></script>
-	<script src="js/TweenMax.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-	<script src="js/isotope.min.js"></script>	
-	<script src="js/images-loded.min.js"></script>	
-    <script src="js/custom.js"></script>
+•From age 20 to age 30 . . . 1 in 2,000
+•From age 30 to age 39 . . . 1 in 229
+•From age 40 to age 49 . . . 1 in 68
+•From age 50 to age 59 . . . 1 in 37
+•From age 60 to age 69 . . . 1 in 26
+•Ever . . . . . . . . . . . . . . . . . . . .1 in 8
+
+"Ever" is lifetime risk. This means a woman has a one-in-eight chance of getting breast cancer after the age of 70. 
+SOURCE:  Susan Love, M.D., president of the Dr. Susan Love Research Foundation 
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse2" aria-expanded="false" aria-controls="multiCollapse2">Is it necessary to do a monthly breast self-exam?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse2">
+				<div class="card card-body">
+                    <h6>
+					Breast self-exam (BSE) has been widely hailed as a technique that can help women find breast cancer early—with the implication that finding it early will save lives. There's just one problem: No study ever has found that BSE reduces breast cancer deaths. That's why after many years of supporting BSE, the American Cancer Society, in May 2003, revised its breast cancer screening guidelines and now calls BSE optional.
+
+					Many women do find their cancers themselves. But very few find them while doing BSE. More typically, the woman just rolled over in bed, or felt a lump while soaping up in the shower, or had it pointed out by a lover.
+
+					This is why it's important for women to become acquainted with their breasts, to know what they look like, and to know what lumps and bumps are normal for them. (It's best to do this soaped up in the shower or bath.) But there's a crucial difference between getting acquainted with your breasts and BSE. BSE is like a search-and-destroy mission. It often makes women tense. And it's all about trying to find cancer. In contrast, getting acquainted with your breasts gives you a good, integrated sense of your body, which will help you know when something doesn't feel right. Some women like to do BSE, and that's fine. But no one should be made to feel guilty for not doing it—especially if they are well acquainted with their breasts.
+					SOURCE:  Susan Love, M.D., president of the Dr. Susan Love Research Foundation
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse3" aria-expanded="false" aria-controls="multiCollapse3">Do most women die of breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse3">
+				<div class="card card-body">
+                    <h6>
+					Women fear breast cancer more than any other disease. And many people believe that most women die of breast cancer. But that's not the case. In the U.S., breast cancer is the fifth-leading cause of death for women. Heart disease is first.
+
+					Five leading causes of death for American women in 2004:
+					Heart Disease-27.2 percent (of all deaths)
+					Cancer-22 percent
+					Stroke-7.5 percent
+					Chronic Lower Respiratory Disease-5.2 percent
+					Alzheimer's Disease-3.9 percent
+
+					The American Cancer Society estimates that in 2010, 207,000 women will be diagnosed with invasive breast cancer and that 40,000 will die of the disease.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse4" aria-expanded="false" aria-controls="multiCollapse4">When should I start having mammograms, and how often should I have them?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse4">
+				<div class="card card-body">
+                    <h6>
+					Everyone agrees that women age 50 and older should have mammograms. But there has been quite a controversy for a number of years now as to whether women between the ages of 40 and 49 should also have annual mammograms. The problem is that women between 40 and 49 typically still have dense breasts, and on a mammogram, this dense breast tissue shows up as white—which is the same color that cancer appears as on a mammogram. With menopause, which typically begins around age 50, the dense tissue in women's breasts is replaced with fatty tissue, which looks gray on a mammogram. It is much easier to see the white cancer against this gray background, which is why mammography works better on women aged 50 and older.
+
+					To date, eight randomized controlled trials have found that mammography screening for women between 40 and 49 has no effect on mortality. Even so, some health organizations continue to recommend annual mammography for women between the ages of 40 and 49. At first glance, there would seem to be little harm in this recommendation. But there is a downside. Many abnormalities seen on mammograms may not be cancer (these are called false positives), but they will prompt additional testing and anxiety. In fact, as many as three out of 10 women who begin annual screening at age 40 will have an abnormal mammogram during the next decade, and the majority of these will end up having biopsies—only to learn that the test was a false positive.
+
+					The bottom line: Even in older women, mammography is far from a perfect screening tool. It may help you find your cancer early, but finding a cancer "early" is not a guarantee that your life will be saved. New data suggest that there are different types of cancers and that how quickly a cancer progresses has more to do with the type of cancer it is than when it is found. Probably the best way to decide when you should begin having mammograms is to discuss your personal risk factors for breast cancer with your physician.
+					SOURCE:  Susan Love, M.D., president of the Dr. Susan Love Research Foundation
+
+					Find more information on mammogram guidelines and the latest research on mammograms on our site.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse5" aria-expanded="false" aria-controls="multiCollapse5">If no one in my family has had breast cancer, can I still get it?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse5">
+				<div class="card card-body">
+                    <h6>
+					Yes, you can. When women learn that breast cancer can be a genetic disease, they often think this means it is a disease that must be inherited. But that's not the case. A genetic disease is one that is caused by a genetic mutation that is either inherited or arises spontaneously. Only about 30 percent of the women who develop breast cancer have a family history of the disease. The other 70 percent have what is called a "sporadic occurrence." This means there is no known family history of the disease.
+					SOURCE:  Susan Love, M.D., president of the Dr. Susan Love Research Foundation
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse6" aria-expanded="false" aria-controls="multiCollapse6">What does breast density have to do with breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse6">
+				<div class="card card-body">
+                    <h6>
+					Breast density has to do with the tissue in your breasts and how that shows up on a mammogram. But while you can’t feel this out on your own, you might find out about it at your next screening: Many states have adopted breast density notification laws, which require physicians to inform a patient if they have dense breasts, according to a new report in the journal Radiology.
+
+					So why should you care about how dense your set is? There are two main reasons, says Debra Ikeda, M.D., professor of radiology at Stanford School of Medicine. “There’s an association between dense breast tissue and a slightly higher risk of having breast cancer,” says Ikeda. It's worth noting, though, that this association is much smaller than any genetic risk factor. “The second problem is that of masking,” says Ikeda. This is what happens when dense breast tissue shows up as white on a mammogram, making it harder to spot cancer (which also shows up white). However, studies have shown that this is less of an issue in digital mammograms as opposed to film screen mammograms.
+
+					But don’t freak out if you see this new language on your mammography report. While researchers seem pretty divided on the issue, having dense breast tissue doesn’t necessarily mean you need additional tests—especially since roughly half of all women have dense breasts. It’s simply something to keep in mind and to discuss with your doctor—along with any other risk factors you may have, says Ikeda. Click here for more information on breast density.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse7" aria-expanded="false" aria-controls="multiCollapse7">What is ductal carcinoma in situ (DCIS)?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse7">
+				<div class="card card-body">
+                    <h6>
+					Ductal carcinoma in situ (DCIS) is a preinvasive form of breast cancer—often considered stage zero—that hasn’t spread beyond the breast. A recent study in the Journal of American Medical Association Internal Medicine found that when DCIS was described using the word cancer, women were more likely to choose more invasive surgical treatments. However, another recent paper in the Journal of American Medical Association calls for a narrowing of the definition of cancer, which may affect how DCIS is diagnosed and treated in the future.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse8" aria-expanded="false" aria-controls="multiCollapse8">Is there any easy way to know my risk?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse8">
+				<div class="card card-body">
+                    <h6>
+					While there’s no way to know your exact risk of breast cancer, new tools are coming close to giving you an accurate assessment. One of these, the Bright Pink’s Assess Your Risk Tool, considers your lifestyle and genetic factors to give you an assessment.
+
+					Unfortunately, a recent study in the journal Patient Education and Counseling found that nearly 1 in 5 women who take a risk assessment tool does not believe her results. Whether you use an online tool or seek the help of a genetic counselor, it’s crucial to be as informed as possible about your risk.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse9" aria-expanded="false" aria-controls="multiCollapse9">Are there any foods that increase or decrease your risk of breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse9">
+				<div class="card card-body">
+                    <h6>
+					Yes! The foods and drinks that can lower your risk include: red-orange produce, broccoli, brussels sprouts, cauliflower, beans, lentils, fish rich in omega-3 fatty acids, tofu, and soy milk. The foods and drinks that can raise your risk include: high-fat dairy, sugar, alcohol, and red meat. Click here for more information on how your diet affects your breast cancer risk.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse10" aria-expanded="false" aria-controls="multiCollapse10">What environmental factors can affect your risk of breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse10">
+				<div class="card card-body">
+                    <h6>
+					Certain toxins you're exposed to on a daily basis—in stuff you breathe in, ingest, and slather on—have been linked to breast cancer. Perhaps the most troubling belong to a group of synthetic chemicals called endocrine disruptors. These nasties can accumulate in fat cells—and especially in fatty, vulnerable breast tissue—where they mimic or block the body's own hormones, including estrogen. And while every woman needs estrogen, chronically high circulating levels can spur cancer growth. Find out how to cut down on endocrine disruptor exposure to slash your breast-cancer risk.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse11" aria-expanded="false" aria-controls="multiCollapse11">How does your weight influence your breast cancer risk?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse11">
+				<div class="card card-body">
+                    <h6>
+					It's the one thing most doctors agree on: If you can do only one thing to lower your lifetime risk, it should be maintaining a healthy weight. Packing too many pounds can increase your breast-cancer chances by 30 to 60 percent, says Carolyn Aldigé, of the Prevent Cancer Foundation. (Particularly worrisome is often-hidden abdominal fat, which on its own can raise your risk by 43 percent.)
+
+					See, fat cells don't just sit still; they can pump out extra estrogen, says Karen M. Basen-Engquist, Ph.D., M.P.H., of the University of Texas MD Anderson Cancer Center. So the more fat cells you have, the more estrogen is likely coursing through your body. And the more of that circulating estrogen you have over the course of your life, the higher your breast-cancer risk, says Graham Colditz, M.D., Ph.D., of the Institute for Public Health at the Washington University in St. Louis School of Medicine.
+
+					Plus, being overweight or obese means you're providing a host environment for cancer progression, says Lee W. Jones, Ph.D., of the Duke Cancer Institute. "That's lots of insulin, lots of glucose, lots of inflammation—all of which conspire to speed up cancer-cell growth once a malignancy occurs."
+                        </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse12" aria-expanded="false" aria-controls="multiCollapse12">What's a healthy weight?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse12">
+				<div class="card card-body">
+                    <h6>
+					For now, the best measure might be a "normal" body mass index (BMI). Click here for more information on how your weight impacts your breast cancer risk.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse13" aria-expanded="false" aria-controls="multiCollapse13">Can exercise really help you cut your risk of breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse13">
+				<div class="card card-body">
+                    <h6>
+					Yes! "More than 60 studies have shown physical activity reduces breast-cancer risk," says Leslie Bernstein, Ph.D., director of the division of cancer etiology at City of Hope National Medical Center/Beckman Research Institute. "In fact, exercising three or more hours per week could reduce your risk by 20 to 30 percent." Click here to find out how exercise can cut your risk of breast cancer.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse14" aria-expanded="false" aria-controls="multiCollapse14">What does stress have to do with breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse14">
+				<div class="card card-body">
+                    <h6>
+					Being permanently frazzled can steer you toward risk-boosting behaviors such as smoking, drinking, or overeating. But research suggests long-term stress might open an even bigger door to breast cancer by increasing blood flow to tumors, triggering hormones that encourage tumor growth, and sending your body into a state of constant inflammation. Need yet one more reason to chill? Chronic stress may increase the growth and spread of one of the most deadly forms of breast cancer—"triple negative"—for which there is no proven treatment. Click here for 3 ways to cut your stress levels.  
+
+					Additional reporting by Tracy Middleton and Sascha de Gersdorff
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse15" aria-expanded="false" aria-controls="multiCollapse15">Is it true that one in eight women will get breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse15">
+				<div class="card card-body">
+                    <h6>
+					Not exactly. The one-in-eight statistic doesn't accurately reflect the average woman's breast cancer risk. Age is the most important risk factor for breast cancer. That means the older a woman is, the greater her risk of developing the disease. Statistics from the U.S. National Cancer Institute show that a woman's chance of being diagnosed with breast cancer by age is:
+
+					•From age 20 to age 30 . . . 1 in 2,000
+					•From age 30 to age 39 . . . 1 in 229
+					•From age 40 to age 49 . . . 1 in 68
+					•From age 50 to age 59 . . . 1 in 37
+					•From age 60 to age 69 . . . 1 in 26
+					•Ever . . . . . . . . . . . . . . . . . . . .1 in 8
+
+					"Ever" is lifetime risk. This means a woman has a one-in-eight chance of getting breast cancer after the age of 70. 
+					SOURCE:  Susan Love, M.D., president of the Dr. Susan Love Research Foundation 
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse16" aria-expanded="false" aria-controls="multiCollapse16">Is it necessary to do a monthly breast self-exam?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse16">
+				<div class="card card-body">
+                    <h6>
+					Breast self-exam (BSE) has been widely hailed as a technique that can help women find breast cancer early—with the implication that finding it early will save lives. There's just one problem: No study ever has found that BSE reduces breast cancer deaths. That's why after many years of supporting BSE, the American Cancer Society, in May 2003, revised its breast cancer screening guidelines and now calls BSE optional.
+
+					Many women do find their cancers themselves. But very few find them while doing BSE. More typically, the woman just rolled over in bed, or felt a lump while soaping up in the shower, or had it pointed out by a lover.
+
+					This is why it's important for women to become acquainted with their breasts, to know what they look like, and to know what lumps and bumps are normal for them. (It's best to do this soaped up in the shower or bath.) But there's a crucial difference between getting acquainted with your breasts and BSE. BSE is like a search-and-destroy mission. It often makes women tense. And it's all about trying to find cancer. In contrast, getting acquainted with your breasts gives you a good, integrated sense of your body, which will help you know when something doesn't feel right. Some women like to do BSE, and that's fine. But no one should be made to feel guilty for not doing it—especially if they are well acquainted with their breasts.
+					SOURCE:  Susan Love, M.D., president of the Dr. Susan Love Research Foundation
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse17" aria-expanded="false" aria-controls="multiCollapse17">Do most women die of breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse17">
+				<div class="card card-body">
+                    <h6>
+					Women fear breast cancer more than any other disease. And many people believe that most women die of breast cancer. But that's not the case. In the U.S., breast cancer is the fifth-leading cause of death for women. Heart disease is first.
+
+					Five leading causes of death for American women in 2004:
+					Heart Disease-27.2 percent (of all deaths)
+					Cancer-22 percent
+					Stroke-7.5 percent
+					Chronic Lower Respiratory Disease-5.2 percent
+					Alzheimer's Disease-3.9 percent
+
+					The American Cancer Society estimates that in 2010, 207,000 women will be diagnosed with invasive breast cancer and that 40,000 will die of the disease. 
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+		<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#multiCollapse18" aria-expanded="false" aria-controls="multiCollapse18">What does breast density have to do with breast cancer?</button>
+		<div class="row">
+			<div class="col">
+			  <div class="collapse multi-collapse" id="multiCollapse18">
+				<div class="card card-body">
+                    <h6>
+					Breast density has to do with the tissue in your breasts and how that shows up on a mammogram. But while you can’t feel this out on your own, you might find out about it at your next screening: Many states have adopted breast density notification laws, which require physicians to inform a patient if they have dense breasts, according to a new report in the journal Radiology.
+
+					So why should you care about how dense your set is? There are two main reasons, says Debra Ikeda, M.D., professor of radiology at Stanford School of Medicine. “There’s an association between dense breast tissue and a slightly higher risk of having breast cancer,” says Ikeda. It's worth noting, though, that this association is much smaller than any genetic risk factor. “The second problem is that of masking,” says Ikeda. This is what happens when dense breast tissue shows up as white on a mammogram, making it harder to spot cancer (which also shows up white). However, studies have shown that this is less of an issue in digital mammograms as opposed to film screen mammograms.
+
+					But don’t freak out if you see this new language on your mammography report. While researchers seem pretty divided on the issue, having dense breast tissue doesn’t necessarily mean you need additional tests—especially since roughly half of all women have dense breasts. It’s simply something to keep in mind and to discuss with your doctor—along with any other risk factors you may have, says Ikeda. Click here for more information on breast density.
+                    </h6>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<hr />
+	  </p>
+
+  </div>
+
+ </div>
+</div>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<footer class="footer-distributed">
+ 
+		<div class="footer-left">
+ 
+		<h3>Ohe<span>maa</span></h3>
+
+ 
+		<p class="footer-company-name">Breast Cancer Detector &copy; 2020</p>
+		<br />
+		<img class="img-fluid rounded-circle" src="{{ url_for('static', filename='images/1.jpg') }}" alt="Breast Cancer Detector" width="80" height="80">
+				<img class="img-fluid rounded-circle" src="{{ url_for('static', filename='images/2.jpg') }}" alt="Breast Cancer Detector" width="80" height="80">
+				<img class="img-fluid rounded-circle" src="{{ url_for('static', filename='images/3.jpg') }}" alt="Breast Cancer Detector" width="80" height="80">
+		</div>
+ 
+		<div class="footer-center">
+ 
+		<div>
+		<i class="fa fa-map-marker"></i>
+		<p><span>IoT Lab University of Capecoast</span> CapeCoast, Ghana</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-phone"></i>
+		<p>+233 551099536</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-envelope"></i>
+		<p><a href="mailto:support@company.com">contact@Breast Cancer Detectorgroup.com</a></p>
+		</div>
+ 
+		</div>
+ 
+		<div class="footer-right">
+ 
+		<p class="footer-company-about">
+		<span>About Us</span>
+	We are a team of UCC undergraduates, who see the need and benefit of machine learning in relation to prediction and are tryingto use its advantage to make breast cancer prediction easier.
+		</p>
+ 
+ 
+		<div class="footer-icons">
+ 
+		<a href="facebook.com"><i class="fa fa-facebook"></i></a>
+		<a href="twitter.com"><i class="fa fa-twitter"></i></a>
+		<a href="linkedin.com"><i class="fa fa-linkedin"></i></a>
+		<a href="github.com"><i class="fa fa-github"></i></a>
+ 
+		</div>
+ 
+		</div>
+ 
+		</footer>
 </body>
+
 </html>

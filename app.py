@@ -4,25 +4,21 @@ from flask import Flask, request, render_template, jsonify
 import pickle
 
 app = Flask(__name__)
-#model = pickle.load(open('model.pkl', 'rb'))
+
 model = pickle.load(open('breast-cancer-model.pkl', 'rb'))
+
 
 @app.route('/')
 def hom():
     return render_template('index.html')
 
-
 @app.route('/home')
 def home():
     return render_template('index.html')
 
-@app.route('/status')
-def status():
-    return render_template('status.html')
-
-# @app.route('/about')
-# def about():
-#     return render_template('about_us.html')
+@app.route('/prevention')
+def prevention():
+    return render_template('prevention.html')
 
 @app.route('/faq')
 def faq():
@@ -31,7 +27,7 @@ def faq():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    
+   
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
@@ -43,7 +39,7 @@ def predict():
     else:
         res_val = "no breast cancer"
 
-    return render_template('status.html', prediction_text='Patient has {}'.format(res_val))
+    return render_template('index.html', prediction_text='Patient has {}'.format(res_val))
     
 @app.route('/results',methods=['POST'])
 def results():
