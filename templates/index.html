@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>Ohemaa</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<!-- Site Icons -->
+	<!-- {{ url_for('static', filename='css/main.css') }} -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.1.png') }}" type="OHEMAA.jpeg">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icon.1.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pogo-slider.min.css') }}">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- Custom CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+	
+	<style>
+		#one{
+			background-image:url(../static/images/slider-01.jpg);
+		}
+		#two{
+			background-image:url({{ url_for('static', filename='images/slider-02.jpg') }});
+		}
+		#three{
+			background-image:url(/static/images/slider-03.jpg);
+		}
+		#four{
+			background-image:url(../static/images/slider-04.jpg);
+		}
+		#five{
+			background-image:url(../static/images/slider-05.jpg);
+		}
+		#six{
+			background-image:url(../static/images/slider-06.jpg);
+		}
+	</style>
+
+</head>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+	<div class="main-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+				</div>
+				<div class="col-lg-6">
+					<div class="wel-nots">
+                        <h2><p>Welcome to Ohemaa!</p></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End top bar -->
+	
+	
+	<!-- Start header -->
+	<header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                   <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="{{ url_for('home') }}">Home</a></li>
+						<li><a class="nav-link" href="{{ url_for('status') }}">Status</a></li>
+                        <li><a class="nav-link" href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start Banner -->
+	<div class="ulockd-home-slider">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="pogoSlider" id="js-main-slider">
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" id ="one" style="background-image:url(../static/images/slider-01.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+                                <h1><b>Welcome to Ohemaa</b></h1>
+                                <h2><p>Early detection of breast cancer can save your life </p></h2>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" id="two" style="background-image:url(../static/images/slider-02.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Let Ohemaa help you predict your risk of getting breast 
+                                cancer</h1>
+                                <h2><p>Ohemaa is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
+							</div>
+						</div>
+					</div>
+                    
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="800" id="three" style="background-image:url(../static/images/slider-03.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>The most convinient way to predict breast cancer<h1>
+                                    <h2><p>Ohemaa is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
+                                    </div>
+                                
+                        </div>
+					   </div>
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="800" id="four" style="background-image:url(../static/images/slider-04.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Reliable,Fast and Comfortable to use</h1>
+								<h2><p>Ohemaa is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
+							</div>
+						</div>
+					</div>
+                    
+                    
+                    
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" id="five" style="background-image:url(../static/images/slider-05.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Talk with our professionals </h1>
+								<h2><p>seek help from  experienced doctors and live a healthy life </p></h2>
+							</div>
+						</div>
+						
+					</div>
+                            <div class="pogoSlider-slide" data-transition="fade" data-duration="800" id="six" style="background-image:url(../static/images/slider-06.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Early detection can save your life</h1>
+								<h2><p>seek help from  experienced doctors and live a healthy life </p></h2>
+							</div>
+						</div>
+						
+					</div>
+				</div><!-- .pogoSlider -->
+			</div>
+		</div>
+	</div>
+	<!-- End Banner -->
+    
+	<!-- Start About us -->
+	<div id="about" class="about-box">
+		<div class="about-a1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title-box">
+                            <h1><b>WELCOME TO OHEMAA</b></h1>
+							</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Start Team -->
+	<h2><b>Breast cancer is the most frequent cancer among women, impacting 2.1 million women each year, and also causes the greatest number of cancer-related deaths among women. In 2018, it is estimated that 627,000 women died from breast cancer – that is approximately 15% of all cancer deaths among women. While breast cancer rates are higher among women in more developed regions, rates are increasing in nearly every region globally.
+In order to improve breast cancer outcomes and survival, early detection is critical. There are two early detection strategies for breast cancer: early diagnosis and screening. Limited resource settings with weak health systems where the majority of women are diagnosed in late stages should prioritize early diagnosis programs based on awareness of early signs and symptoms and prompt referral to diagnosis and treatment. 
+        </b></h2>
+
+	
+	<!-- Start Team -->
+	<div id="team" class="team-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Our Doctors</h2>
+						<p> </p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Aisha</h3>
+                            <span class="post">web developer</span>
+                            <ul class="social">
+                                <li><a href="Facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="Twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="Google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="Youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">Najat</h3>
+                            <span class="post">Web Designer</span>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="our-team">
+                        <div class="pic">
+                            <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="title">lucky</h3>
+                            <span class="post">web developer</span>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+		</div>
+	</div>
+	
+	<!-- End Team -->
+
+	
+	<!-- Start Contact -->
+	<div id="contact" class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Contact us</h2>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="col-lg-12 col-xs-12">
+				  <div class="contact-block">
+					<form id="contactForm">
+					  <div class="row">
+						
+						
+					
+					  </div>            
+					</form>
+				  </div>
+				</div>
+				
+				
+				<div class="col-lg-12 col-xs-12">
+					<div class="left-contact">
+						<div class="media cont-line">
+							<div class="media-left icon-b">
+								<i class="fa fa-location-arrow" aria-hidden="true"></i>
+							</div>
+							<div class="media-body dit-right">
+								<h4>Address</h4>
+								<p> Madina estate, bungalow 2</p>
+							</div>
+						</div>
+						<div class="media cont-line">
+							<div class="media-left icon-b">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="media-body dit-right">
+								<h4>Email</h4>
+								<a href="#">ohemaa@gmail.com</a><br>
+								<a href="#">ohemaa@yahoo.com</a>
+							</div>
+						</div>
+						<div class="media cont-line">
+							<div class="media-left icon-b">
+								<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+							</div>
+							<div class="media-body dit-right">
+								<h4>Phone Number</h4>
+								<a href="#">+233551099536</a><br>
+								<a href="#">+233557889139</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- End Contact -->
+	
+	<!-- Start Subscribe -->
+	<div class="subscribe-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="subscribe-inner text-center clearfix">
+						<h2>Subscribe</h2>
+						<p>You can subscribe to our newsletter and recieve new updates on breast cancer.</p>
+						<form action="#" method="post">
+							<div class="form-group">
+								<input class="form-control-1" id="email-1" name="email" placeholder="Email Address" required="" type="text">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="new-btn-d br-2">
+									Subscribe
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Subscribe -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">ohemaa</a> Design By : <a href="https://html.design/">ohemaa group</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.pogo-slider.min.js"></script> 
+	<script src="js/slider-index.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+	<script src="js/isotope.min.js"></script>	
+	<script src="js/images-loded.min.js"></script>	
+    <script src="js/custom.js"></script>
+</body>
+</html>

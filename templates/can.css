@@ -1,0 +1,232 @@
+@import "compass/css3";
+ body {
+	 font-size: 62.5%;
+	 width: 100%;
+	 /* height: 100%; */
+	 /* position: absolute; */
+	 font-family: Raleway;
+	 background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg) no-repeat fixed;
+	 background-size: cover;
+	 background-position: 50%;
+	 -webkit-font-smoothing: antialiased;
+	 
+}
+ body .menu {
+	 /* position: absolute; */
+	 width: 100%;
+	 background: inherit;
+}
+ body .menu .mainmenu {
+	 background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg) no-repeat fixed;
+	 background-size: cover;
+	 background-position: 50%;
+}
+ body .menu .mainmenu:before {
+	 /* position: absolute; */
+	 content: "";
+	 display: block;
+	 width: 100%;
+	 /* height: 100%; */
+	 background: inherit;
+}
+ body .menu .mainmenu:after {
+	 clear: both;
+	 content: "";
+	 display: block;
+}
+ body .menu .mainmenu .menuitem {
+	 float: left;
+	 width: 10%;
+	 padding-top: 10px;
+	 padding-bottom: 10px;
+	 text-align: center;
+	 cursor: pointer;
+	 color: white;
+	 font-size: 1.5rem;
+}
+ body #findpass {
+	 top: 50%;
+	 left: 5%;
+	 padding: 10px 20px;
+	 width: auto;
+	 background: white;
+	 color: rgba(0, 0, 0, 0.7);
+	 position: fixed;
+	 background: rgba(255, 255, 255, 0.5);
+	 border: none;
+	 font-size: 1.2rem;
+	 cursor: pointer;
+}
+body #findpa {
+  top: 40%;
+  left: 5%;
+  padding: 10px 20px;
+  width: 10px;
+  background: white;
+  color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+body #findpas {
+  top: 60%;
+  left: 5%;
+  padding: 10px 20px;
+  width: auto;
+  background: white;
+  color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+ body #findpass:focus {
+	 outline: none;
+}
+ .form {
+	 margin: 0 auto;
+	 position: fixed;
+	 top: 0%;
+	 left: 50%;
+	 width: 350px;
+	 padding: 20px;
+	 overflow: hidden;
+	 background-color: rgba(0, 0, 0, 1);
+	 border: 1px solid rgba(255, 255, 255, 0.5);
+	 background: inherit;
+}
+ .form .forceColor {
+	 width: 100%;
+	 height: 100%;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 background-color: rgba(0, 0, 0, 0.4);
+}
+ .form:before {
+	 content: "";
+	 width: 110%;
+	 height: 110%;
+	 position: absolute;
+	 background: inherit;
+	 left: -5%;
+	 right: 0;
+	 bottom: 0;
+	 top: -5%;
+}
+ .form.goAway {
+	 opacity: 0;
+}
+ .form .topbar .spanColor {
+	 position: absolute;
+	 width: 0px;
+	 right: 20px;
+	 height: 43px;
+	 opacity: 0.2;
+	 background-color: white;
+	 border-top-left-radius: 0px;
+	 border-bottom-left-radius: 0px;
+	 border-top-right-radius: 6px;
+	 border-bottom-right-radius: 6px;
+}
+ .form .topbar .input {
+	 display: block;
+	 width: 100%;
+	 position: relative;
+	 border-top-left-radius: 6px;
+	 border-bottom-left-radius: 6px;
+	 border-top-right-radius: 6px;
+	 border-bottom-right-radius: 6px;
+	 font-size: 1rem;
+	 background: transparent;
+	 border-top: 1px solid rgba(255, 255, 255, 0.4);
+	 border-left: 1px solid rgba(255, 255, 255, 0.4);
+	 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	 border-right: 1px solid rgba(255, 255, 255, 0.4);
+	 margin-bottom: 25px;
+	 color: rgba(255, 255, 255, 0.4);
+	 padding: 5px 20px;
+}
+ .form .topbar .input::-webkit-input-placeholder {
+	 color: white;
+	 font-size: 1.2rem;
+	 font-family: Raleway;
+	 line-height: 1.3rem;
+	 font-weight: 200;
+}
+ .form .topbar .input:focus {
+	 outline: none;
+	 color: white;
+	 border: 1px solid white;
+}
+ .form .topbar .input.disabled:hover {
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+}
+ .form .topbar .input:hover {
+	 border: 1px solid white;
+}
+ .form .submit {
+	 padding: 10px 20px;
+	 width: 100%;
+	 font-size: 1.2rem;
+	 font-family: Raleway;
+	 font-weight: 200;
+	 display: block;
+	 color: white;
+	 position: relative;
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+	 background: rgba(255, 255, 255, 0.5);
+	 cursor: pointer;
+}
+ .form .submit:focus {
+	 outline: none;
+}
+ .form .submit:hover {
+	 color: white;
+	 border: 1px solid white;
+}
+ .form .submit.recover {
+	 background: #ff2b4b;
+	 color: white !important;
+	 border: 1px solid white !important;
+	 transition: all 400ms linear;
+}
+ .topbar.error .spanColor {
+	 width: calc(100% - 39px);
+	 border-top-left-radius: 6px;
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+	 border-bottom-left-radius: 6px;
+	 background-color: #ff2b4b;
+}
+ .topbar.error + .submit {
+	 color: white;
+}
+ .topbar.error .input {
+	 color: rgba(255, 255, 255, 0.4);
+	 border: 1px solid rgba(255, 255, 255, 0.4);
+}
+ .topbar.error .input::-webkit-input-placeholder {
+	 color: white;
+}
+ .topbar.success .spanColor {
+	 width: calc(100% - 39px);
+	 border-top-left-radius: 6px;
+	 border: 1px solid #26c97d;
+	 border-bottom-left-radius: 6px;
+	 background-color: #26c97d;
+}
+ .topbar.success + .submit {
+	 color: white;
+	 border: 1px solid white;
+}
+ .topbar.success .input {
+	 color: white;
+	 border: 1px solid #26c97d;
+}
+ .topbar.success .input::-webkit-input-placeholder {
+	 color: white;
+}
+ 

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>ohemaa</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+	<!-- {{ url_for('static', filename='css/main.css') }} -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.1.png') }}" type="OHEMAA.jpeg">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icon.1.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pogo-slider.min.css') }}">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+	
+	<style>
+		@import "compass/css3";
+	 body {
+		 font-size: 62.5%;
+		 width: 100%;
+		 height: 100%;
+		 position: absolute;
+	   font-family: Raleway;
+	   background: url(https://cancerfax.com/wp-content/uploads/2020/07/Breast-cancer-treatment-in-India-guidelines-768x415.jpg) no-repeat fixed;
+	   /* background: url(http://almurshidimed.com/wp-content/uploads/2020/04/breast-cancer-screening-early-detection.jpg) no-repeat fixed; */
+	   /* background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg) no-repeat fixed; */
+	   /* background-image: url("obc1.jpg"); */
+	   /* background-repeat: no-repeat; */
+	   /* background-attachment: fixed; */
+		 background-size: cover;
+		 background-position: 50%;
+		 -webkit-font-smoothing: antialiased;
+		 /* font-smoothing: antialiased; */
+	}
+	 body #findpass {
+		 top: 1%;
+		 left: 1%;
+		 padding: 10px 20px;
+		 width: 10%;
+		 background: white;
+		 color: rgba(0, 0, 0, 0.7);
+		 position: fixed;
+		 background: rgba(255, 255, 255, 0.5);
+		 border: none;
+		 font-size: 1.2rem;
+		 cursor: pointer;
+	}
+	body #findpa {
+	  top: 40%;
+	  left: 5%;
+	  padding: 10px 20px;
+	  width: 10px;
+	  background: white;
+	  color: rgba(255, 255, 255, 0.9);
+	  position: fixed;
+	  background: rgba(0, 0, 0, 0.5);
+	  border: none;
+	  font-size: 1.2rem;
+	  cursor: pointer;
+	}
+	body #findpas {
+	  top: 0%;
+	  left: 20%;
+	  padding: 10px 20px;
+	  width: auto;
+	  background: white;
+	  color: rgba(255, 255, 255, 0.9);
+	  position: fixed;
+	  background: rgba(0, 0, 0, 1.0);
+	  border: none;
+	  font-size: 1.2rem;
+	  cursor: pointer;
+	}
+	 body #findpass:focus {
+		 outline: none;
+	}
+	 .form {
+		 margin: 0 auto;
+		 /* position: fixed; */
+		 /* top: 10%; */
+	   left: 20%;
+	   width: 30%;
+		 /* width: 350px; */
+		 padding: 20px;
+		 overflow: hidden;
+		 background-color: rgba(0, 0, 0, 1);
+		 border: 1px solid rgba(255, 255, 255, 1.0);
+		 background: inherit;
+	}
+	/* .forma {
+		 margin: 0 auto;
+		 position: fixed;
+		 top: 10%;
+	   left: 50%;
+	   width: 30%;
+		 padding: 20px;
+		 overflow: hidden;
+		 background-color: rgba(0, 0, 0, 1);
+		 border: 1px solid rgba(255, 255, 255, 0.5);
+		 background: inherit;
+	} */
+	 .form .forceColor {
+		 width: 100%;
+		 height: 100%;
+		 position: absolute;
+		 left: 0;
+		 top: 0;
+		 background-color: rgba(0, 0, 0, 1.0);
+	}
+	 .form:before {
+		 content: "";
+		 width: 110%;
+		 height: 110%;
+		 position: absolute;
+		 background: inherit;
+		 left: -5%;
+		 right: 0;
+		 bottom: 0;
+		 top: -5%;
+	}
+	 .form.goAway {
+		 opacity: 0;
+	}
+	 .form .topbar .spanColor {
+		 position: absolute;
+		 width: 0px;
+		 right: 20px;
+		 height: 43px;
+		 opacity: 0.2;
+		 background-color: white;
+		 border-top-left-radius: 0px;
+		 border-bottom-left-radius: 0px;
+		 border-top-right-radius: 6px;
+		 border-bottom-right-radius: 6px;
+	}
+	 .form .topbar .input {
+		 display: block;
+		 width: 100%;
+		 position: relative;
+		 border-top-left-radius: 6px;
+		 border-bottom-left-radius: 6px;
+		 border-top-right-radius: 6px;
+		 border-bottom-right-radius: 6px;
+		 font-size: 1rem;
+		 background: transparent;
+		 border-top: 1px solid rgba(255, 255, 255, 0.4);
+		 border-left: 1px solid rgba(255, 255, 255, 0.4);
+		 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+		 border-right: 1px solid rgba(255, 255, 255, 0.4);
+		 margin-bottom: 25px;
+		 color: rgba(255, 255, 255, 0.6);
+		 padding: 5px 20px;
+	}
+	 .form .topbar .input::-webkit-input-placeholder {
+		 color: white;
+		 font-size: 1.2rem;
+		 font-family: Raleway;
+		 line-height: 1.3rem;
+		 font-weight: 200;
+	}
+	 .form .topbar .input:focus {
+		 outline: none;
+		 color: white;
+		 border: 1px solid white;
+	}
+	 .form .topbar .input.disabled:hover {
+		 border: 1px solid rgba(255, 255, 255, 0.4);
+	}
+	 .form .topbar .input:hover {
+		 border: 1px solid white;
+	}
+	 .form .submit {
+		 padding: 10px 20px;
+		 width: 100%;
+		 font-size: 1.2rem;
+		 font-family: Raleway;
+		 font-weight: 200;
+		 display: block;
+		 color: black;
+		 position: relative;
+		 border: 1px solid rgba(255, 255, 255, 0.4);
+		 background: rgba(255, 255, 255, 0.5);
+		 cursor: pointer;
+	}
+	 .form .submit:focus {
+		 outline: none;
+	}
+	 .form .submit:hover {
+		 color: black;
+		 border: 1px solid white;
+	}
+	 .form .submit.recover {
+		 background: #ff2b4b;
+		 color: black !important;
+		 border: 1px solid white !important;
+		 transition: all 400ms linear;
+	}
+	
+	/* .forma .forceColor {
+		 width: 100%;
+		 height: 100%;
+		 position: absolute;
+		 left: 0;
+		 top: 0;
+		 background-color: rgba(0, 0, 0, 0.7);
+	}
+	 .forma:before {
+		 content: "";
+		 width: 110%;
+		 height: 110%;
+		 position: absolute;
+		 background: inherit;
+		 left: -5%;
+		 right: 0;
+		 bottom: 0;
+		 top: -5%;
+	}
+	 .forma.goAway {
+		 opacity: 0;
+	}
+	 .forma .topbar .spanColor {
+		 position: absolute;
+		 width: 0px;
+		 right: 20px;
+		 height: 43px;
+		 opacity: 0.2;
+		 background-color: white;
+		 border-top-left-radius: 0px;
+		 border-bottom-left-radius: 0px;
+		 border-top-right-radius: 6px;
+		 border-bottom-right-radius: 6px;
+	}
+	 .forma .topbar .input {
+		 display: block;
+		 width: 100%;
+		 position: relative;
+		 border-top-left-radius: 6px;
+		 border-bottom-left-radius: 6px;
+		 border-top-right-radius: 6px;
+		 border-bottom-right-radius: 6px;
+		 font-size: 1rem;
+		 background: transparent;
+		 border-top: 1px solid rgba(255, 255, 255, 0.4);
+		 border-left: 1px solid rgba(255, 255, 255, 0.4);
+		 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+		 border-right: 1px solid rgba(255, 255, 255, 0.4);
+		 margin-bottom: 25px;
+		 color: rgba(255, 255, 255, 0.6);
+		 padding: 5px 20px;
+	}
+	 .forma .topbar .input::-webkit-input-placeholder {
+		 color: white;
+		 font-size: 1.2rem;
+		 font-family: Raleway;
+		 line-height: 1.3rem;
+		 font-weight: 200;
+	}
+	 .forma .topbar .input:focus {
+		 outline: none;
+		 color: white;
+		 border: 1px solid white;
+	}
+	 .forma .topbar .input.disabled:hover {
+		 border: 1px solid rgba(255, 255, 255, 0.4);
+	}
+	 .forma .topbar .input:hover {
+		 border: 1px solid white;
+	}
+	 .forma .submit {
+		 padding: 10px 20px;
+		 width: 100%;
+		 font-size: 1.2rem;
+		 font-family: Raleway;
+		 font-weight: 200;
+		 display: block;
+		 color: black;
+		 position: relative;
+		 border: 1px solid rgba(255, 255, 255, 0.4);
+		 background: rgba(255, 255, 255, 0.5);
+		 cursor: pointer;
+	}
+	 .forma .submit:focus {
+		 outline: none;
+	}
+	 .forma .submit:hover {
+		 color: black;
+		 border: 1px solid white;
+	}
+	 .forma .submit.recover {
+		 background: #ff2b4b;
+		 color: black !important;
+		 border: 1px solid white !important;
+		 transition: all 400ms linear;
+	} */
+	 .topbar.error .spanColor {
+		 width: calc(100% - 39px);
+		 border-top-left-radius: 6px;
+		 border: 1px solid rgba(255, 255, 255, 0.4);
+		 border-bottom-left-radius: 6px;
+		 background-color: #ff2b4b;
+	}
+	 .topbar.error + .submit {
+		 color: black;
+	}
+	 .topbar.error .input {
+		 color: rgba(255, 255, 255, 0.4);
+		 border: 1px solid rgba(255, 255, 255, 0.4);
+	}
+	 .topbar.error .input::-webkit-input-placeholder {
+		 color: white;
+	}
+	 .topbar.success .spanColor {
+		 width: calc(100% - 39px);
+		 border-top-left-radius: 6px;
+		 border: 1px solid #26c97d;
+		 border-bottom-left-radius: 6px;
+		 background-color: #26c97d;
+	}
+	 .topbar.success + .submit {
+		 color: black;
+		 border: 1px solid white;
+	}
+	 .topbar.success .input {
+		 color: white;
+		 border: 1px solid #26c97d;
+	}
+	 .topbar.success .input::-webkit-input-placeholder {
+		 color: white;
+	}
+	 
+	  </style>
+
+</head>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+	<div class="main-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+				</div>
+				<div class="col-lg-6">
+					<div class="wel-nots">
+                        <h2><p>Welcome to Ohemaa!</p></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End top bar -->
+	
+	<!-- Start header -->
+	<header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="{{ url_for('home') }}"><img src="images/logo.jpg" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+						<li><a class="nav-link active" href="{{ url_for('status') }}">Status</a></li>
+                        <li><a class="nav-link" href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start Banner -->
+	<div class="ulockd-home-slider">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="pogoSlider" id="js-main-slider">
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-01.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+                                <h1><b>Welcome to Ohemaa</b></h1>
+                                <h2><p>Early detection of breast cancer can save your life </p></h2>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-02.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Let Ohemaa help you predict your risk of getting breast 
+                                cancer</h1>
+                                <h2><p>Ohemaa is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
+							</div>
+						</div>
+					</div>
+                    
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-03.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>The most convinient way to predict breast cancer<h1>
+                                    <h2><p>Ohemaa is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
+                                    </div>
+                                
+                        </div>
+					   </div>
+                    <div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-04.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Reliable,Fast and Comfortable to use</h1>
+								<h2><p>Ohemaa is uses algorithms to help predict risk of cancer by analyzing elements of the blood that influence cancer growth</p></h2>
+							</div>
+						</div>
+					</div>
+                    
+                    
+                    
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-05.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Talk with our professionals </h1>
+								<h2><p>seek help from  experienced doctors and live a healthy life </p></h2>
+							</div>
+						</div>
+						
+					</div>
+                            <div class="pogoSlider-slide" data-transition="fade" data-duration="800" style="background-image:url(images/slider-06.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Early detection can save your life</h1>
+								<h2><p>seek help from  experienced doctors and live a healthy life </p></h2>
+							</div>
+						</div>
+						
+					</div>
+				</div><!-- .pogoSlider -->
+			</div>
+		</div>
+	</div>
+	<!-- End Banner -->
+	
+	<!-- Start About us -->
+	<div id="about" class="about-box">
+		<div class="about-a1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title-box">
+							<h2>{{ prediction_text }}</h2>
+							<h2>Predict Your Breast Cancer Status</h2>
+                           
+							</div>
+					</div>
+				</div>
+				
+                <h2><b>Please enter your data below:</b></h2>
+				<form action="{{ url_for('predict')}}"method="POST">
+				  <div class="form">
+					<div class="forceColor"></div>
+					<div class="topbar">
+					  
+					  <div class="spanColor"></div>
+					  <input type="text" name="Age" class="input" placeholder="Age" required="required" />
+					  <input type="text" name="BMI" class="input" placeholder="BMI" required="required" />
+					  <input type="text" name="Glucose" class="input" placeholder="Glucose" required="required" />
+					  <input type="text" name="Insulin" class="input" placeholder="Insulin" required="required" />
+					  <input type="text" name="HOMA" class="input" placeholder="HOMA" required="required" />
+					  <input type="text" name="Leptin" class="input" placeholder="Leptin" required="required" />
+					  <input type="text" name="Adiponectin" class="input" placeholder="Adiponectin" required="required" />
+					  <input type="text" name="Resistin" class="input" placeholder="Resistin" required="required" />
+					  <input type="text" name="MCP.1" class="input" placeholder="MCP.1" required="required" />
+					</div>
+					<button class="submit" id="submit" type="submit">Predict cancer</button>
+				  </div>
+
+				  </form>
+			</div>
+		</div>
+	</div>
+	<!-- End About us -->
+	
+                  
+	
+<!-- Start Team -->
+	<div id="team" class="team-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Our Doctors</h2>
+						<p> </p>
+					</div>
+				</div>
+			</div>
+			
+			<ul id="banner">
+				<li>
+					<img src="{{ url_for('static', filename='images/about-img-01.jpg') }}" alt="">
+				</li>
+				<li>
+					<img src="{{ url_for('static', filename='images/about-img-02.jp') }}g" alt="">
+				</li>
+				<li>
+					<img src="{{ url_for('static', filename='images/about-img-03.jpg') }}" alt="">
+				</li>
+			</ul>
+	</div>
+	
+	<!-- End Team -->
+	
+	<!-- Start Contact -->
+	<div id="contact" class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Contact us</h2>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="col-lg-12 col-xs-12">
+				  <div class="contact-block">
+					<form id="contactForm">
+					  <div class="row">
+						
+						
+					
+					  </div>            
+					</form>
+				  </div>
+				</div>
+				
+				
+				<div class="col-lg-12 col-xs-12">
+					<div class="left-contact">
+						<div class="media cont-line">
+							<div class="media-left icon-b">
+								<i class="fa fa-location-arrow" aria-hidden="true"></i>
+							</div>
+							<div class="media-body dit-right">
+								<h4>Address</h4>
+								<p>Fleming 196 Woodside Circle Mobile, FL 36602</p>
+							</div>
+						</div>
+						<div class="media cont-line">
+							<div class="media-left icon-b">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="media-body dit-right">
+								<h4>Email</h4>
+								<a href="#">demoinfo@gmail.com</a><br>
+								<a href="#">demoinfo@gmail.com</a>
+							</div>
+						</div>
+						<div class="media cont-line">
+							<div class="media-left icon-b">
+								<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+							</div>
+							<div class="media-body dit-right">
+								<h4>Phone Number</h4>
+								<a href="#">12345 67890</a><br>
+								<a href="#">12345 67890</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- End Contact -->
+	
+	<!-- Start Subscribe -->
+	<div class="subscribe-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="subscribe-inner text-center clearfix">
+						<h2>Subscribe</h2>
+						<p>You can subscribe to our newsletter and recieve new updates on breast cancer.</p>
+						<form action="#" method="post">
+							<div class="form-group">
+								<input class="form-control-1" id="email-1" name="email" placeholder="Email Address" required="" type="text">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="new-btn-d br-2">
+									Subscribe
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Subscribe -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">ohemaa</a> Design By : <a href="https://html.design/">html design</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.pogo-slider.min.js"></script> 
+	<script src="js/slider-index.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+	<script src="js/isotope.min.js"></script>	
+	<script src="js/images-loded.min.js"></script>	
+    <script src="js/custom.js"></script>
+</body>
+</html>
